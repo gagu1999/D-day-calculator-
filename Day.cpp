@@ -107,5 +107,5 @@ void countArmyDay()
   converToValidValue(standardDay, year, month, day);
   cout <<"복무형태는 육군기준입니다.\n";
   /*이게 정확한 기준이 나와있는 곳 없이 그냥 2주에 1일씩 줄어든다고만 나와서
-  고냥 18개월로 계산하려고합니다.*/
+  고냥 18개월로 계산하려고 합니다.*/
 }
