@@ -12,5 +12,6 @@ void converToValidValue(char * str, int & year, int & month, int & day);
 void countDay_N(int year, int month, int day); // 기준일로부터 n일째 되는 날 구하는 함수
 void countDay_D(int year, int month, int day); // 기준일로부터 D-x일 되는 날 구하는 함수
 void countDay_X(int year, int month, int day); // 기준일로부터 xxxx.xx.xx까지 며칠인지 구하는 함수.
+
 bool isLeapYear(int year); // 윤년인지 아닌지 구하는 함수
 #endif

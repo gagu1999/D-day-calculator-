@@ -55,7 +55,6 @@ void countDay() //기준일로부터 다양한 날들까지의 날짜를 세는 
   cout<< "기준일을 입력해주세요. 예)20200912: ";
   cin >> standardDay;
   int year, month, day;
-  year = month = day = 0;
   converToValidValue(standardDay, year, month, day); //입력받은 char 배열을 각각 int로 쪼개기
   /*
   여기서 해야할것.
@@ -107,6 +106,27 @@ void converToValidValue(char * str, int& year, int& month, int& day)
   day += (str[7] - '0');
 }
 
+void countAge()
+{
+  cout <<"만나이 계산기입니다.\n";
+  char standardDay[9]; // 기준일을 입력받을 char 배열
+  cout << "날짜계산은 기준일을 1일로 포함하여 계산됩니다.\n";
+  cout<< "기준일을 입력해주세요. 예)20200912: \n";
+  cin >> standardDay;
+  int year, month, day; // 기준 년 월 일
+  converToValidValue(standardDay, year, month, day); 
+  int bornY, bornM, bornD; // 생일
+  char tmp[9]; // 생일 입력받을 임시배열
+  cout <<"생일을 입력해주세요: 예)19990928 \n";
+  cin >> tmp;
+  converToValidValue(tmp, bornY, bornM, bornD);
+  int age = year- bornY;
+  if(month * 100 + day < bornM * 100 + bornD) //생일 안 지난경우
+  {
+    age--;
+  }
+  printf("만나이는 %d세 입니다.\n", age);
+}
 void countArmyDay()
 {
   char standardDay[9];
@@ -116,6 +136,4 @@ void countArmyDay()
   int year, month, day;
   year = month = day = 0;
   converToValidValue(standardDay, year, month, day);
-  cout <<"복무형태는 육군기준입니다.\n";
-  /*이게 정확한 기준이 나와있는 곳 없이 그냥 2주에 1일씩 줄어든다고만 나와서
-  고냥 18개월로 계산하려고 합니다.*/
+
